@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[513],{5431:function(e){e.exports=JSON.parse('{"allTagsPath":"/generative-art-workshop-website/showcase/tags","slug":"/generative-art-workshop-website/showcase/tags/hello","name":"hello","count":1,"permalink":"/generative-art-workshop-website/showcase/tags/hello"}')}}]);

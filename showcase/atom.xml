@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://gvarnavi.github.io/generative-art-workshop-website/showcase</id>
+    <title>Generative Art Blog</title>
+    <updated>2022-01-25T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://gvarnavi.github.io/generative-art-workshop-website/showcase"/>
+    <subtitle>Generative Art Blog</subtitle>
+    <icon>https://gvarnavi.github.io/generative-art-workshop-website/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Welcome]]></title>
+        <id>welcome</id>
+        <link href="https://gvarnavi.github.io/generative-art-workshop-website/showcase/welcome"/>
+        <updated>2022-01-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Welcome !]]></summary>
+        <content type="html"><![CDATA[<p>Welcome !</p>]]></content>
+        <author>
+            <name>Georgios Varnavides</name>
+            <uri>https://gvarnavides.com/</uri>
+        </author>
+        <author>
+            <name>Nina Andrejević</name>
+            <uri>https://github.com/ninarina12</uri>
+        </author>
+        <author>
+            <name>Jovana Andrejević</name>
+            <uri>https://github.com/jandrejevic12</uri>
+        </author>
+    </entry>
+</feed>

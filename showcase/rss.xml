@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Generative Art Blog</title>
+        <link>https://gvarnavi.github.io/generative-art-workshop-website/showcase</link>
+        <description>Generative Art Blog</description>
+        <lastBuildDate>Tue, 25 Jan 2022 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Welcome]]></title>
+            <link>https://gvarnavi.github.io/generative-art-workshop-website/showcase/welcome</link>
+            <guid>welcome</guid>
+            <pubDate>Tue, 25 Jan 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Welcome !]]></description>
+            <content:encoded><![CDATA[<p>Welcome !</p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
