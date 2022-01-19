@@ -49,7 +49,7 @@ const config = {
         title: 'Generative Art',
         logo: {
           alt: 'Generative Art Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo.png',
         },
         items: [
           {
