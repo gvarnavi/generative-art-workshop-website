@@ -25,7 +25,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/gvarnavi/generative-art-workshop-website/edit/main/website/docs/',
+          editUrl: 'https://github.com/gvarnavi/generative-art-workshop-website/edit/main/website/',
         },
         blog: {
 	  path: 'showcase',
@@ -33,7 +33,7 @@ const config = {
           showReadingTime: false,
           // Please change this to your repo.
           editUrl:
-            'https://github.com/gvarnavi/generative-art-workshop-website/edit/main/website/showcase/',
+            'https://github.com/gvarnavi/generative-art-workshop-website/edit/main/website/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
