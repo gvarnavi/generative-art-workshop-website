@@ -1,23 +1,13 @@
 import React from 'react';
 import NbViewer from 'react-nbviewer';
 import axios from "axios";
-import Markdown from 'react-markdown';
-import MathPlugin from 'remark-math';
-import TeX from '@matejmazur/react-katex';
+import ReactMarkdown from 'react-markdown';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
 import SyntaxHighlighter from 'react-syntax-highlighter';
+
 import 'katex/dist/katex.min.css';
 import 'react-nbviewer/dist/index.css';
-
-const b64DecodeUnicode = (str) => {
-  return decodeURIComponent(
-    atob(str)
-      .split("")
-      .map(function (c) {
-        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-      })
-      .join("")
-  );
-};
 
 // Cleans up json to remove newlines from math envs
 const clean_up_json = (object) => {
@@ -29,7 +19,7 @@ const clean_up_json = (object) => {
           .trim()
           .replace(
             /(\${1,2})((?:\\.|[\s\S])*?)\1/g,
-            (m, tag, src) => tag + src.replace(/\s/g, "") + tag
+            (m, tag, src) => tag + src.replace(/\r?\n/g, "") + tag
           );
         return {
           cell_type: el.cell_type,
@@ -47,6 +37,19 @@ const clean_up_json = (object) => {
   };
 };
 
+// Decode unicode characters
+const b64DecodeUnicode = (str) => {
+  return decodeURIComponent(
+    atob(str)
+      .split("")
+      .map(function (c) {
+        return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
+      })
+      .join("")
+  );
+};
+
+// Read clean JSON data from git .ipynb url
 const getNotebook = async (notebookURL) => {
   const regex = new RegExp(
     /https:\/\/github.com\/(.+?)\/(.+?)\/blob\/(.+?)\/(.+\.ipynb)/
@@ -61,17 +64,19 @@ const getNotebook = async (notebookURL) => {
   return content;
 };
 
+// Markdown Components
+//
+// TeX Support
+const MathMarkdown = (props) => <ReactMarkdown 
+	remarkPlugins={[remarkMath]} 
+	rehypePlugins={[rehypeKatex]} 
+	children={props.source} 
+	/>
+	
+// source -> children breaking change since 5.0.3
+const Markdown = (props) => <ReactMarkdown children={props.source} />
 
-const MathMarkdown = (props) => {
-  const renderers = {
-    math: ({ value }) => <TeX block math={value} />,
-    inlineMath: ({ value }) => <TeX math={value} />,
-    code: props => <SyntaxHighlighter language={props.language}>{props.value}</SyntaxHighlighter>
-  }
-  return <Markdown renderers={renderers} plugins={[MathPlugin]} source={props.source} />
-}
-
-
+// Notebook Viewer
 export default function NotebookViewer({ notebookURL }) {
   const [notebook, setNotebook] = React.useState(null);
 
@@ -86,9 +91,9 @@ export default function NotebookViewer({ notebookURL }) {
       ) : (
         <NbViewer
           source={notebook}
+          code={SyntaxHighlighter}
           markdown={MathMarkdown}
           //markdown={Markdown} // disable TeX rendering
-          code={SyntaxHighlighter}
         />
       )}
     </div>
