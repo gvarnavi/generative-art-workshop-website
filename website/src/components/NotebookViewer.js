@@ -19,6 +19,33 @@ const b64DecodeUnicode = (str) => {
   );
 };
 
+const clean_up_json = (object) => {
+  return {
+    cells: object.cells.map((el) => {
+      if (el.cell_type == "markdown") {
+        const source = el.source.join("");
+        const clean = source
+          .trim()
+          .replace(
+            /(\${1,2})((?:\\.|[\s\S])*?)\1/g,
+            (m, tag, src) => tag + src.replace(/\s/g, "") + tag
+          );
+        return {
+          cell_type: el.cell_type,
+          id: el.id,
+          metadata: el.metadata,
+          source: clean.split(/(?<=\r?\n)/)
+        };
+      } else {
+        return el;
+      }
+    }),
+    metadata: object.metadata,
+    nbformat: object.nbformat,
+    nbformat_minor: object.nbformat_minor
+  };
+};
+
 const getNotebook = async (notebookURL) => {
   const regex = new RegExp(
     /https:\/\/github.com\/(.+?)\/(.+?)\/blob\/(.+?)\/(.+\.ipynb)/
@@ -27,7 +54,7 @@ const getNotebook = async (notebookURL) => {
   const [, organization, repo, branch, notebook] = parts;
   const requestURL = `https://api.github.com/repos/${organization}/${repo}/contents/${notebook}?ref=${branch}`;
   const data = await (await axios.get(requestURL)).data;
-  const content = JSON.parse(b64DecodeUnicode(data.content));
+  const content = clean_up_json(JSON.parse(b64DecodeUnicode(data.content)));
   console.log(content);
   return content;
 };
