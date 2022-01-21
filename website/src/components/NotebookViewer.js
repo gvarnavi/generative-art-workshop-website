@@ -19,6 +19,7 @@ const b64DecodeUnicode = (str) => {
   );
 };
 
+// Cleans up json to remove newlines from math envs
 const clean_up_json = (object) => {
   return {
     cells: object.cells.map((el) => {
@@ -55,6 +56,7 @@ const getNotebook = async (notebookURL) => {
   const requestURL = `https://api.github.com/repos/${organization}/${repo}/contents/${notebook}?ref=${branch}`;
   const data = await (await axios.get(requestURL)).data;
   const content = clean_up_json(JSON.parse(b64DecodeUnicode(data.content)));
+  //const content = JSON.parse(b64DecodeUnicode(data.content)); // disable TeX rendering
   console.log(content);
   return content;
 };
@@ -85,6 +87,7 @@ export default function NotebookViewer({ notebookURL }) {
         <NbViewer
           source={notebook}
           markdown={MathMarkdown}
+          //markdown={Markdown} // disable TeX rendering
           code={SyntaxHighlighter}
         />
       )}
