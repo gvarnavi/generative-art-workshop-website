@@ -60,7 +60,7 @@ const config = {
           },
           {to: '/showcase', label: 'Showcase', position: 'left'},
           {
-            href: 'https://github.com/gvarnavi/generative-art-workshop-website',
+            href: 'https://github.com/gvarnavi/generative-art-iap',
             label: 'GitHub',
             position: 'right',
           },
@@ -87,7 +87,7 @@ const config = {
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/gvarnavi/generative-art-workshop-website',
+                href: 'https://github.com/gvarnavi/generative-art-iap',
               },
             ],
           },
