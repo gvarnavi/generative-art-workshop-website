@@ -1,8 +1,8 @@
 import React, {useRef, useEffect} from "react";
 import {Runtime, Inspector} from "@observablehq/runtime";
-import notebook from "@gvarnavi/interactive-l-systems";
+import notebook from "@gvarnavi/wallpaper-groups-interactive";
 
-function InteractiveLSystems() {
+function WallpaperGroupsInteractive() {
   const ref = useRef();
 
   useEffect(() => {
@@ -14,9 +14,9 @@ function InteractiveLSystems() {
   return (
     <>
       <div ref={ref} />
-      <p>Credit: <a href="https://observablehq.com/@gvarnavi/interactive-l-systems">L-systems by Georgios Varnavides</a></p>
+      <p>Credit: <a href="https://observablehq.com/@gvarnavi/wallpaper-groups-interactive">Interactive Wallpaper Groups by Georgios Varnavides</a></p>
     </>
   );
 }
 
-export default InteractiveLSystems;
+export default WallpaperGroupsInteractive;

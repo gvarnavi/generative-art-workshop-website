@@ -1532,9 +1532,13 @@
     tslib "^2.3.1"
     url-loader "^4.1.1"
 
-"@gvarnavi/interactive-l-systems@https://api.observablehq.com/d/4e8ba55c49deedb1.tgz?v=3":
-  version "1223.0.0"
-  resolved "https://api.observablehq.com/d/4e8ba55c49deedb1.tgz?v=3#8a54d8913f52731f8b0c7edeba90b233e26c5ec9"
+"@gvarnavi/l-systems-interactive@https://api.observablehq.com/d/f9cedfcc4848a30d.tgz?v=3":
+  version "1226.0.0"
+  resolved "https://api.observablehq.com/d/f9cedfcc4848a30d.tgz?v=3#de5ee7e62c95edfb252e37ed3a231fdc253004ba"
+
+"@gvarnavi/wallpaper-groups-interactive@https://api.observablehq.com/d/df558babc9d96a95.tgz?v=3":
+  version "697.0.0"
+  resolved "https://api.observablehq.com/d/df558babc9d96a95.tgz?v=3#7ca63bfe6b7818021c648f8b3838685ae87e2285"
 
 "@hapi/hoek@^9.0.0":
   version "9.2.1"

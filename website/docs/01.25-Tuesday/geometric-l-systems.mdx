@@ -7,7 +7,7 @@ hide_title: true
 
 import NotebookEmbed from '@site/src/components//WolframEmbedder.js'
 import NotebookViewer from '@site/src/components/NotebookViewer.js'
-import InteractiveLSystems from '@site/src/components/LSystemsObservable.js'
+import LSystemsInteractive from '@site/src/components/LSystemsInteractive.js'
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -16,14 +16,14 @@ import TabItem from '@theme/TabItem';
   <TabItem value="wl-ipynb" label="Wolfram Language - Jupyter" default>
     <NotebookViewer notebookURL="https://github.com/gvarnavi/generative-art-iap/blob/master/01.25-Tuesday/04_geometric-l-systems-wl.ipynb" />
   </TabItem>
-  <TabItem value="wl-nb" label="Wolfram Language">
-    <NotebookEmbed url="https://www.wolframcloud.com/obj/gvarnavi/Published/04X_geometric-l-systems.nb"/>
-  </TabItem>
   <TabItem value="py-ipynb" label="Python - Jupyter">
     <NotebookViewer notebookURL="https://github.com/gvarnavi/generative-art-iap/blob/master/01.25-Tuesday/04X_geometric-l-systems-py.ipynb" />
   </TabItem>
+  <TabItem value="wl-nb" label="Wolfram Language">
+    <NotebookEmbed url="https://www.wolframcloud.com/obj/gvarnavi/Published/04X_geometric-l-systems.nb"/>
+  </TabItem>
   <TabItem value="observable" label="JS - Observable">
-    <InteractiveLSystems />
+    <LSystemsInteractive />
   </TabItem>
 </Tabs>
 
