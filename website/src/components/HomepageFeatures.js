@@ -13,11 +13,11 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Strange Attactors',
+    title: 'Strange Attractors',
     Svg: require('../../static/img/logo.svg').default,
     description: (
       <>
-        We will investigate locally unstable attactors of dynamical systems with fractal structure and globally attractive orbits.
+        We will investigate locally unstable attractors of dynamical systems with fractal structure and globally attractive orbits.
       </>
     ),
   },
