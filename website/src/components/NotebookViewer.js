@@ -25,7 +25,7 @@ const clean_up_json = (object) => {
           cell_type: el.cell_type,
           id: el.id,
           metadata: el.metadata,
-          source: clean.split(/(?<=\r?\n)/)
+          source: clean.split(/(\r\n|\n|\r)/)
         };
       } else {
         return el;
